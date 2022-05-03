@@ -33,12 +33,17 @@ public class WordPyramid {
      * Takes off the first and last letter and prints the result
      * Repeat with the result
      * Go until there is only 1 or 2 letters left, in which case it cannot be reduced anymore.
-     * @param word
+     * @param word the word that will be used to print the rest of its word pyramid
      */
     public static void printWordPyramid(String word) {
+        // If the word is 2 or less, then it cannot be reduced any more
         if (word.length() > 2) {
+            // Trim off the first and last letters
+            // By replacing String word with only its middle letters
             word = word.substring(1,word.length()-1);
+            // Print the resulting word
             System.out.println(word);
+            // Call the method again to repeat
             printWordPyramid(word);
         }
     }
